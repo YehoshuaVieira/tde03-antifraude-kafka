@@ -1,0 +1,12 @@
+# Banco de dados e arquivos SQLite
+data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Dependencias e arquivos temporarios
+vendor/
+.env
+*.log
+.DS_Store
+Thumbs.db
