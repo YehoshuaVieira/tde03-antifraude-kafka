@@ -3,7 +3,14 @@ declare(strict_types=1);
 
 $bootstrapServers = 'kafka:9092';
 $topicName = 'transacoes';
-$dbPath = __DIR__ . '/../data/transacoes.sqlite';
+$dbDir = __DIR__ . '/../data';
+
+// Cria a pasta do banco caso ela não exista
+if (!is_dir($dbDir)) {
+    mkdir($dbDir, 0777, true);
+}
+
+$dbPath = $dbDir . '/transacoes.sqlite';
 
 // Conecta ao banco de dados SQLite
 $pdo = new PDO('sqlite:' . $dbPath);
